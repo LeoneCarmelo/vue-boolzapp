@@ -31,6 +31,10 @@ img {
     width:40px;
 }
 
+.logo_user + span {
+    font-size: 12px;
+}
+
 i {
     color: #b0b0b1;
 }
@@ -59,16 +63,39 @@ main.container {
     font-weight: bold;
 }
 
-.notify_message > span:last-child {
+.notify_message > span:last-child,
+.info > span:last-child {
     font-size: 8px;
     color: var(--text);
     font-weight: 700;
-    text-decoration: underline;
+}
 
+.contacts {
+    background-color: #fafafa;
+    height:350px;
+    overflow-y: scroll;
+}
+
+.contact {
+    background-color: white;
+    margin-top: 2px;
+}
+.contact:hover {
+    background-color: #e9ebeb;
+}
+
+.info > span:first-child {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.data {
+    font-size: 8px;
+    color: var(--text);
 }
 
 footer > input {
-    width: 90%;
+    width: 85%;
     border: 0;
     border-radius: 6px;
     padding: 6px;
