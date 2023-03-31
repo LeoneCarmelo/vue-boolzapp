@@ -14,10 +14,13 @@
     <div id="app">
         <div class="container d-flex mt-3">
             <!-- Left Side -->
-            <div class="left p-1">
+            <div class="left">
                 <header class="d-flex justify-content-between align-items-center">
-                    <div class="user">
-                        <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                    <div class="user m-1 d-flex">
+                        <div class="logo_user">
+                            <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                        </div>
+                        <span class="ps-2 align-self-center">Sofia</span>
                     </div>
                     <div class="menu_left">
                         <i class="px-2 fa-solid fa-circle-notch"></i>
@@ -25,17 +28,36 @@
                         <i class="px-2 fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </header>
-                <div class="notifications"></div>
-                <div class="searchBar"></div>
+                <div class="notifications d-flex p-2">
+                    <div class="icon_bell me-2">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="notify_message">
+                        <span class="d-block">Ricevi notifiche di nuove messaggi</span>
+                        <span class="d-block">Attiva notifiche desktop</span>
+                    </div>
+                </div>
+                <div class="searchBar p-1">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text  border-0 bg-white" id="addon-wrapping">
+                            <i class="px-2 fa-solid fa-magnifying-glass"></i>
+                        </span>
+                        <input type="text" class="form-control border-0 bg-white " placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                </div>
                 <div class="contacts">
                     <div class="contact"></div>
                 </div>
             </div>
             <!-- Right Side -->
-            <div class="right p-1">
+            <div class="right">
                 <header class="d-flex justify-content-between align-items-center">
-                    <div class="user">
-                        <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                    <div class="user m-1 d-flex">
+                        <div class="logo_user">
+                            <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                        </div>
+                        
+                        <span class="ps-2 align-self-center">Michele</span>
                     </div>
                     <div class="menu_right">
                         <i class="px-2 fa-solid fa-magnifying-glass"></i>
@@ -49,8 +71,10 @@
                         <div class="col"></div>
                     </div>
                 </main>
-                <footer>
-
+                <footer class="d-flex justify-content-center align-items-center py-1">
+                    <i class="pe-2 fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="ps-2 fa-solid fa-microphone"></i>
                 </footer>
             </div>
         </div>
