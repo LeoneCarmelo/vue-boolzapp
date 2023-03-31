@@ -169,21 +169,6 @@ createApp({
         }
     },
     methods: {
-        showMessages(index) {
-            let answers = []
-            let message = this.contacts[index].messages
-            let sent = ''
-            let received = ''
-            message.forEach(element => {
-                if (element.status == 'received') {
-                    received = element.message
-                } else {
-                    sent = element.message
-                }
-            });
 
-            return received, sent
-
-        }
     }
 }).mount('#app')
