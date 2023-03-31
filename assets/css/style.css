@@ -1,0 +1,37 @@
+/* #region color */
+:root {
+    --header: #eaeaea;
+}
+/* #endregion color */
+body {
+    height: 100vh;
+    background: linear-gradient(#00887b 20%, #dadbd3 20%);
+    overflow-y: hidden;
+}
+
+.left {
+    width:30%;
+    background-color: var(--header);
+    border-right: 1px solid  #b0b0b1;
+}
+
+.right {
+    width:70%;
+    background-color: var(--header);
+}
+
+img {
+    border-radius: 50% ;
+}
+
+.user {
+    width:40px;
+}
+
+i {
+    color: #b0b0b1;
+}
+
+main.container {
+    background-image: url(../img/mine.jpg);
+}
