@@ -18,7 +18,7 @@
                 <header class="d-flex justify-content-between align-items-center">
                     <div class="user m-1 d-flex">
                         <div class="logo_user">
-                            <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                            <img src="./assets/img/avatar_io.jpg" alt="" class="img-fluid">
                         </div>
                         <span class="ps-2 align-self-center fw-bold">Sofia</span>
                     </div>
@@ -46,14 +46,14 @@
                       </div>
                 </div>
                 <div class="contacts">
-                    <div class="contact d-flex justify-content-between py-1 mb-1">
+                    <div v-for="(contact, index) in contacts" class="contact d-flex justify-content-between py-1 mb-1" @click="showMessages(index)">
                         <div class="ps-2 info_user d-flex">
                             <div class="logo_user">
-                                <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                                <img :src="contact.avatar" alt="" class="img-fluid">
                             </div>
                             <div class="info">
-                                <span class="ps-2 align-self-center">Michele</span>
-                                <span class="ps-2 d-block">Ultimo accesso oggi alle 12:00</span>
+                                <span class="ps-2 align-self-center">{{contact.name}}</span>
+                                <span class="ps-2 d-block">Ultimo messaggio inviato</span>
                             </div>
                         </div>
                         <div class="data pe-2">12:00</div>
@@ -82,8 +82,16 @@
                 </header>
                 <main class="container">
                     <div class="row">
-                        <div class="col"></div>
-                        <div class="col"></div>
+                        <div class="col">
+                            <div class="message_received mx-auto w-50  p-2 rounded-3 mt-3" >
+                                <div class="message_data text-end">12:00</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div  class="message_sent ms-5 w-50  p-2 rounded-3 mt-3 ">
+                                <div class="message_data text-end ">12:00</div>
+                            </div>
+                        </div>
                     </div>
                 </main>
                 <footer class="d-flex justify-content-center align-items-center py-1">

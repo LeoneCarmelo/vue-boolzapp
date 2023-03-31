@@ -2,6 +2,7 @@
 :root {
     --header: #eaeaea;
     --text: #878788;
+    --message-sent:#d5f9ba;
 }
 /* #endregion color */
 body {
@@ -42,6 +43,7 @@ i {
 main.container {
     background-image: url(../img/mine.jpg);
     height:400px;
+    overflow-y: scroll;
 }
 
 .notifications {
@@ -79,6 +81,7 @@ main.container {
 .contact {
     background-color: white;
     margin-top: 2px;
+    cursor: pointer;
 }
 .contact:hover {
     background-color: #e9ebeb;
@@ -94,6 +97,21 @@ main.container {
     color: var(--text);
 }
 
+.message_received {
+    background-color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.message_sent {
+    background-color: var(--message-sent);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.message_data {
+    font-size: 8px;
+}
 footer > input {
     width: 85%;
     border: 0;
