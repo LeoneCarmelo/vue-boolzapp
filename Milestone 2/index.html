@@ -102,18 +102,16 @@
                     <!-- Main -->
                     <main class="container">
                         <div class="row">
-                            <div class="col">
-                                <div v-for="(contact, index) in contacts"
+                            <div class="col" v-if="activeContact != -1">
+                                <div v-for="(allMessages, index) in contacts[activeContact].messages"
                                     class="message_received mx-auto w-50 p-2
-                                    rounded-3 mt-3"> 
-                                    <div class="message_data text-end">12:00</div>
+                                    rounded-3 mt-3"> {{ getAllMessages(allMessages) }}
+                                    <div class="message_data text-end">{{ getDataMessages(allMessages) }}</div>
                                 </div>
-
                             </div>
                             <div class="col">
                                 <div class="message_sent ms-5 w-50 p-2 rounded-3
-                                    mt-3 ">
-                                    Bene
+                                    mt-3 ">bene
                                     <div class="message_data text-end ">12:00</div>
                                 </div>
                             </div>

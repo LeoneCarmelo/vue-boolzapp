@@ -191,6 +191,12 @@ createApp({
             const entireDateArr = messages[lastMessageIndex].date.split(' ')
             const time = `alle ${entireDateArr[1]}`
             return time
+        },
+        getAllMessages(messages) {
+            return messages.message
+        },
+        getDataMessages(messages) {
+            return messages.date.split(' ')[1]
         }
     }
 }).mount('#app')
