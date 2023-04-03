@@ -45,6 +45,10 @@ i {
     color: #b0b0b1;
 }
 
+i:hover, .notify_message > span:last-child {
+    cursor: pointer;
+}
+
 main.container {
     background-image: url(../img/mine.jpg);
     height:400px;
@@ -56,6 +60,8 @@ main.container {
 }
 
 .icon_bell {
+    width: 30px;
+    height: 30px;
     background-color: white;
     border-radius: 50%;
     padding: 5px;

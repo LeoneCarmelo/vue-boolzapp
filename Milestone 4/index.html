@@ -38,7 +38,7 @@
                     </header>
                     <!-- Notifications -->
                     <div class="notifications d-flex p-2">
-                        <div class="icon_bell me-2">
+                        <div class="icon_bell me-2 d-flex align-items-center">
                             <i class="fa-solid fa-bell-slash"></i>
                         </div>
                         <div class="notify_message">
@@ -63,7 +63,8 @@
                     </div>
                     <!-- Contacts -->
                     <ul class="contacts mb-0">
-                        <li v-for="(contact, index) in contacts" class="contact
+                        <!-- Controllo contacts e filteredContact -->
+                        <li v-for="(contact, index) in filteredContacts()" class="contact
                             d-flex justify-content-between py-1 mb-1"
                             @click="setActiveContact(index)">
                             <div class="ps-2 info_user d-flex">

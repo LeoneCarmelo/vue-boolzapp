@@ -226,6 +226,9 @@ createApp({
         },
         sendResponse(activeContact) {
             this.response = setTimeout(this.getResponse(activeContact), 1000)
+        },
+        filteredContacts(){
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.textToSearch.toLowerCase()))
         }
     }
 }).mount('#app')
