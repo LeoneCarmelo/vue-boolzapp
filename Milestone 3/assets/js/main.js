@@ -168,7 +168,7 @@ createApp({
             ],
             activeContact: -1,
             newText: '',
-            response: null
+            response: null,
         }
     },
     methods: {
@@ -208,18 +208,18 @@ createApp({
             }
             this.contacts[activeContact].messages.push(newMessageObj)
             this.newText = ''
-            this.sendResponse()
+            this.sendResponse(activeContact)
         },
-        getResponse() {
+        getResponse(activeContact) {
             const responseObj = {
                 date:'10/10/2020 16:51:02',
                 message: 'Ok',
                 status: 'received'
             }
-            this.contacts[activeContact].messages.push(newMessageObj)
+            this.contacts[activeContact].messages.push(responseObj)
         },
-        sendResponse() {
-            this.response = setTimeout(this.getResponse, 1000)
+        sendResponse(activeContact) {
+            this.response = setTimeout(this.getResponse(activeContact), 1000)
         }
     }
 }).mount('#app')
