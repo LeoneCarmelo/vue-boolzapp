@@ -24,6 +24,7 @@ body {
     border-bottom: 1px solid  #b0b0b1;
 }
 
+/* #region left */
 img {
     border-radius: 50% ;
 }
@@ -105,6 +106,8 @@ main.container {
     font-weight: 600;
 }
 
+/* #endregion left */
+/* #region right */
 .menu_right {
     padding: 12px;
 }
@@ -112,6 +115,10 @@ main.container {
 .data {
     font-size: 8px;
     color: var(--text);
+}
+
+.col > div {
+    position: relative;
 }
 
 .message_received {
@@ -130,6 +137,32 @@ main.container {
     width:35%;
 }
 
+main .fa-angle-down {
+    position:absolute;
+    right: 10px;
+    top: 5px;
+    display: none;
+}
+
+.col > div:hover .fa-angle-down {
+    display:block;
+}
+
+.popup {
+    position: absolute;
+    top:45px;
+    right:10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.popup button {
+    border: 0;
+    background-color: white;
+}
+
 .message_data {
     font-size: 8px;
 }
@@ -143,3 +176,4 @@ footer > input {
 footer i {
     color: #6b7274;
 }
+/* #endregion right */
