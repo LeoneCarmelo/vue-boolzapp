@@ -116,9 +116,9 @@
                     </main>
                     <!-- Footer -->
                     <footer class="d-flex justify-content-center
-                        align-items-center py-1">
+                        align-items-center py-1 px-2">
                         <i class="pe-3 fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model="newText" placeholder="Scrivi un messaggio" @keyup.enter="sendNewMessage(activeContact)">
                         <i class="ps-3 fa-solid fa-microphone"></i>
                     </footer>
                 </div>

@@ -166,7 +166,9 @@ createApp({
                     ],
                 }
             ],
-            activeContact: -1
+            activeContact: -1,
+            newText: '',
+            response: null
         }
     },
     methods: {
@@ -197,6 +199,27 @@ createApp({
         },
         getDataMessages(messages) {
             return messages.date.split(' ')[1]
+        },
+        sendNewMessage(activeContact) {
+            const newMessageObj = {
+                date: '10/10/2020 16:51:01',
+                message: this.newText,
+                status: 'sent'
+            }
+            this.contacts[activeContact].messages.push(newMessageObj)
+            this.newText = ''
+            this.sendResponse()
+        },
+        getResponse() {
+            const responseObj = {
+                date:'10/10/2020 16:51:02',
+                message: 'Ok',
+                status: 'received'
+            }
+            this.contacts[activeContact].messages.push(newMessageObj)
+        },
+        sendResponse() {
+            this.response = setTimeout(this.getResponse, 1000)
         }
     }
 }).mount('#app')
