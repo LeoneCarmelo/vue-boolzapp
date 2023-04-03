@@ -170,7 +170,8 @@ createApp({
             newText: '',
             response: null,
             textToSearch: '',
-            popup: false
+            popup: false,
+            activeMessage: -1
         }
     },
     methods: {
@@ -235,6 +236,10 @@ createApp({
         showPopup() {
             this.popup = !this.popup
             return this.popup
+        },
+        setActiveMessage(index) {
+            this.activeMessage = index
+            console.log(this.activeMessage)
         }
     }
 }).mount('#app')
