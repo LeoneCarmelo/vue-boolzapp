@@ -213,7 +213,7 @@ createApp({
                 this.newText = ''
                 this.sendResponse(activeContact)
             } else {
-                this.newText = 'Seleziona prima un contatto'
+                this.newText = 'Seleziona prima un contatto dalla lista'
             }
         },
         getResponse(activeContact) {

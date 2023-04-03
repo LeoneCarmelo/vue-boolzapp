@@ -58,7 +58,7 @@
                             <input type="text" class="form-control border-0
                                 bg-white" placeholder="Cerca o inizia una nuova
                                 chat" aria-label="Username"
-                                aria-describedby="addon-wrapping">
+                                aria-describedby="addon-wrapping" v-model="textToSearch">
                         </div>
                     </div>
                     <!-- Contacts -->
@@ -76,7 +76,7 @@
                                     <span class="ps-2 d-block">{{ getLastMessage(contact.messages) }}</span>
                                 </div>
                             </div>
-                            <div class="data pe-2">12:00</div>
+                            <div class="data pe-2">{{ getLastTimeAccess(contact.messages).slice(5, -3) }}</div>
                         </li>
                     </ul>
                 </div>
