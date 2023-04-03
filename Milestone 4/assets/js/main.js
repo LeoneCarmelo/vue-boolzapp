@@ -170,7 +170,7 @@ createApp({
             newText: '',
             response: null,
             textToSearch: '',
-            popup: 'd-none'
+            popup: false
         }
     },
     methods: {
@@ -178,7 +178,7 @@ createApp({
             this.activeContact = index
             console.log(this.activeContact)
             this.newText = ''
-            this.popup = 'd-none'
+            this.popup = false
         },
         getLastMessage(messages) {
             const lastMessageIndex = messages.length -1
@@ -233,7 +233,7 @@ createApp({
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.textToSearch.toLowerCase()))
         },
         showPopup() {
-            this.popup = 'd-block'
+            this.popup = !this.popup
             return this.popup
         }
     }

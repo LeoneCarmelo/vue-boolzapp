@@ -112,7 +112,7 @@
                                     rounded-3 mt-3" :class="allMessages.status == 'received' ? 'message_received' : 'message_sent'"> {{ getAllMessages(allMessages) }}
                                     <div class="message_data text-end">{{ getDataMessages(allMessages) }}</div>
                                     <i class="fa fa-angle-down" aria-hidden="true" @click="showPopup()"></i>
-                                    <div class="popup" :class="popup == 'd-none' ? 'd-none' : popup">
+                                    <div class="popup" :class="popup === false ? 'd-none' : 'd-block'">
                                         <button class="d-block">Message info</button>
                                         <button class="d-block">Delete message</button>
                                     </div>
