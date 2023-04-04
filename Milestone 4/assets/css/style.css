@@ -110,7 +110,7 @@ main.container {
 /* #region right */
 .menu_right {
     padding: 12px;
-    align-self: flex-end;
+    margin-left: auto;
 }
 
 .data {
