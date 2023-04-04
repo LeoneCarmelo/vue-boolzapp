@@ -175,12 +175,14 @@ createApp({
         }
     },
     methods: {
+        /* Selection of the active contact */
         setActiveContact(index) {
             this.activeContact = index
-            console.log(this.activeContact)
+            //console.log(this.activeContact)
             this.newText = ''
             this.popup = false
         },
+        /* Selection the last messages */
         getLastMessage(messages) {
             if (messages.length > 0) {
                 const lastMessageIndex = messages.length -1
@@ -190,6 +192,7 @@ createApp({
                 return ''
             }
         },
+        /* Get the last message with the data last data access */
         getLastDataAccess(messages) {
             if (messages.length > 0) {
                 const lastMessageIndex = messages.length -1
@@ -201,6 +204,7 @@ createApp({
                 return ''
             }
         },
+        /* Get last time access in hours */
         getLastTimeAccess(messages) {
             if(messages.length > 0) {
                 const lastMessageIndex = messages.length -1
@@ -211,12 +215,15 @@ createApp({
                 return ''
             }
         },
+        /* Get all the messages */
         getAllMessages(messages) {
             return messages.message
         },
+        /* Get only the date */
         getDataMessages(messages) {
             return messages.date.split(' ')[1]
         },
+        /* Send the new message to the active contact */
         sendNewMessage(activeContact) {
             if (activeContact != -1) {
                 const newMessageObj = {
@@ -233,6 +240,7 @@ createApp({
                 this.newText = 'Seleziona prima un contatto dalla lista'
             }
         },
+        /* Get random answer */
         getResponse(activeContact) {
             const randomMsgList = ['Ok', 'Non ti preoccupare', 'Certo!', 'Nessun Problema!']
             let randomMsgIndex = Math.floor(Math.random() * randomMsgList.length)
@@ -245,28 +253,29 @@ createApp({
             }
             this.contacts[activeContact].messages.push(responseObj)
         },
+        /* Set time to get a answer */
         sendResponse(activeContact) {
             this.response = setTimeout(this.getResponse(activeContact), 1000)
         },
+        /* Filtered contact depends what we write in the search bar */
         filteredContacts(){
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.textToSearch.toLowerCase()))
         },
+        /* Toggle to show and hid the popup message */
         showPopup() {
             this.popup = !this.popup
         },
+        /* Select the active message */
         setActiveMessage(index) {
             this.activeMessage = index;
             this.showPopup();
-            console.log(this.activeMessage)
+            //console.log(this.activeMessage)
         },
+        /* Remove the message */
         removeMessage(activeMessage , allMessages) {
             //console.log(activeMessage, allMessages)
             allMessages.splice(activeMessage, 1)
         }
-    },
-    mounted: function() {
-        console.log(this.filteredContacts()) 
-        console.log(this.contacts[activeContact].avatar )
     }
 }).mount('#app')
 
