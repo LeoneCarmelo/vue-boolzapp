@@ -125,7 +125,8 @@
                         align-items-center py-1 px-2">
                         <i class="pe-3 fa-regular fa-face-smile"></i>
                         <input type="text" v-model="newText" placeholder="Scrivi un messaggio" @keyup.enter="sendNewMessage(activeContact)">
-                        <i class="ps-3 fa-solid fa-microphone"></i>
+                        <i class="ps-3 fa-solid fa-microphone" :class="newText.length > 0 ?'d-none' : 'd-block'"></i>
+                        <i class="ps-3 fa-sharp fa-solid fa-paper-plane" :class="newText.length > 0 ? 'd-block' : 'd-none'"></i>
                     </footer>
                 </div>
             </div>
