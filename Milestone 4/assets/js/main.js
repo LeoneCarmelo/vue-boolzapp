@@ -235,11 +235,18 @@ createApp({
         },
         showPopup() {
             this.popup = !this.popup
-            return this.popup
         },
         setActiveMessage(index) {
-            this.activeMessage = index
+            this.activeMessage = index;
+            this.showPopup();
             console.log(this.activeMessage)
+        },
+        removeMessage(activeMessage , allMessages) {
+            //console.log(activeMessage, allMessages)
+            allMessages.splice(activeMessage, 1)
         }
     }
 }).mount('#app')
+
+
+// newDate().toLocaleDateString('it')

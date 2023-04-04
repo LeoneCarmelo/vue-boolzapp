@@ -156,6 +156,7 @@ main .fa-angle-down {
     padding: 10px;
     border-radius: 5px;
     z-index: 1;
+    box-shadow: 0 0 2px 0px;
 }
 
 .popup button {
