@@ -197,8 +197,20 @@ footer i {
     }
 }
 
-@media screen and (max-width:743px) {
-    .info_user  .info span:last-child{
-        display:none;
+@media screen and (max-width:554px) {
+    .menu_right i:not(i:last-child), 
+    .notify_message {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:486px) {
+    .info_user {
+        flex-direction: column;
+    }
+    .message_sent, .message_received {
+        margin:0;
+        width:fit-content
     }
 }

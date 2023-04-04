@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="info">
                                     <span class="ps-2 align-self-center">{{contact.name}}</span>
-                                    <span class="ps-2 d-block last_msg">{{ getLastMessage(contact.messages) }}</span>
+                                    <span class="ps-2 d-none d-sm-block last_msg">{{ getLastMessage(contact.messages) }}</span>
                                 </div>
                             </div>
                             <div class="data pe-2">{{ getLastTimeAccess(contact.messages).slice(5, -3) }}</div>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="info">
                                 <span class="ps-2 align-self-center">{{contacts[activeContact].name}}</span>
-                                <span class="ps-2 d-block">{{ getLastDataAccess(contacts[activeContact].messages) }} <span>{{ getLastTimeAccess(contacts[activeContact].messages) }}</span>
+                                <span class="ps-2  d-block">{{ getLastDataAccess(contacts[activeContact].messages) }} <span>{{ getLastTimeAccess(contacts[activeContact].messages) }}</span>
                                 </span>
                             </div>
                         </div>
