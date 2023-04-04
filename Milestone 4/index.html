@@ -85,10 +85,8 @@
                     <!-- Header -->
                     <header class="d-flex
                         align-items-center justify-content-between">
-                        <!-- ###########################cambio v-if con v-show############## -->
                         <div class="user m-1 d-flex" v-if="activeContact != -1">
                             <div class="logo_user">
-                                <!-- ############### sto cambiando contacts[activeContact].avatar con filterdContacts()[activeContact].avatar -->
                                 <img :src="contacts[activeContact].avatar" alt=""
                                     class="img-fluid">
                             </div>

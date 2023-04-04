@@ -182,22 +182,34 @@ createApp({
             this.popup = false
         },
         getLastMessage(messages) {
-            const lastMessageIndex = messages.length -1
-            const message = messages[lastMessageIndex].message
-            return message
+            if (messages.length > 0) {
+                const lastMessageIndex = messages.length -1
+                const message = messages[lastMessageIndex].message
+                return message
+            } else {
+                return ''
+            }
         },
         getLastDataAccess(messages) {
-            const lastMessageIndex = messages.length -1
-            const entireDateArr = messages[lastMessageIndex].date.split(' ')
-            const date = `Ultimo accesso oggi ${entireDateArr[0]}`
-
-            return date
+            if (messages.length > 0) {
+                const lastMessageIndex = messages.length -1
+                const entireDateArr = messages[lastMessageIndex].date.split(' ')
+                const date = `Ultimo accesso oggi ${entireDateArr[0]}`
+    
+                return date
+            } else {
+                return ''
+            }
         },
         getLastTimeAccess(messages) {
-            const lastMessageIndex = messages.length -1
-            const entireDateArr = messages[lastMessageIndex].date.split(' ')
-            const time = `alle ${entireDateArr[1]}`
-            return time
+            if(messages.length > 0) {
+                const lastMessageIndex = messages.length -1
+                const entireDateArr = messages[lastMessageIndex].date.split(' ')
+                const time = `alle ${entireDateArr[1]}`
+                return time
+            } else {
+                return ''
+            }
         },
         getAllMessages(messages) {
             return messages.message

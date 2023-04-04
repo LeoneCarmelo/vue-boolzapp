@@ -110,6 +110,7 @@ main.container {
 /* #region right */
 .menu_right {
     padding: 12px;
+    align-self: flex-end;
 }
 
 .data {
@@ -190,6 +191,9 @@ footer i {
 @media screen and (max-width: 768px) {
     .menu_left i:not(.menu_left i:last-child) {
         display: none;
+    }
+    div.container {
+        max-width: 100%;
     }
 }
 
