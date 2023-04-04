@@ -171,7 +171,7 @@ createApp({
             response: null,
             textToSearch: '',
             popup: false,
-            activeMessage: -1
+            activeMessage: -1,
         }
     },
     methods: {
@@ -251,8 +251,11 @@ createApp({
             //console.log(activeMessage, allMessages)
             allMessages.splice(activeMessage, 1)
         }
+    },
+    mounted: function() {
+        console.log(this.filteredContacts()) 
+        console.log(this.contacts[activeContact].avatar )
     }
 }).mount('#app')
 
 
-// newDate().toLocaleDateString('it')

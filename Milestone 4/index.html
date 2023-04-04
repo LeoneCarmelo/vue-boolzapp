@@ -56,8 +56,7 @@
                                 <i class="px-2 fa-solid fa-magnifying-glass"></i>
                             </span>
                             <input type="text" class="form-control border-0
-                                bg-white" placeholder="Cerca o inizia una nuova
-                                chat" aria-label="Username"
+                                bg-white" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
                                 aria-describedby="addon-wrapping" v-model="textToSearch">
                         </div>
                     </div>
@@ -74,7 +73,7 @@
                                 </div>
                                 <div class="info">
                                     <span class="ps-2 align-self-center">{{contact.name}}</span>
-                                    <span class="ps-2 d-block">{{ getLastMessage(contact.messages) }}</span>
+                                    <span class="ps-2 d-block last_msg">{{ getLastMessage(contact.messages) }}</span>
                                 </div>
                             </div>
                             <div class="data pe-2">{{ getLastTimeAccess(contact.messages).slice(5, -3) }}</div>
@@ -86,8 +85,10 @@
                     <!-- Header -->
                     <header class="d-flex
                         align-items-center justify-content-between">
+                        <!-- ###########################cambio v-if con v-show############## -->
                         <div class="user m-1 d-flex" v-if="activeContact != -1">
                             <div class="logo_user">
+                                <!-- ############### sto cambiando contacts[activeContact].avatar con filterdContacts()[activeContact].avatar -->
                                 <img :src="contacts[activeContact].avatar" alt=""
                                     class="img-fluid">
                             </div>
@@ -133,7 +134,7 @@
         </div>
 
 
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

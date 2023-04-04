@@ -183,3 +183,18 @@ footer i {
     color: #6b7274;
 }
 /* #endregion right */
+
+/* Responsive */
+
+
+@media screen and (max-width: 768px) {
+    .menu_left i:not(.menu_left i:last-child) {
+        display: none;
+    }
+}
+
+@media screen and (max-width:743px) {
+    .info_user  .info span:last-child{
+        display:none;
+    }
+}
