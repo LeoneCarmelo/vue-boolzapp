@@ -164,6 +164,11 @@ main .fa-angle-down {
     background-color: white;
 }
 
+button:hover {
+    border: 2px solid var(--text);
+    border-radius: 10px;
+}
+
 .message_data {
     font-size: 8px;
 }
