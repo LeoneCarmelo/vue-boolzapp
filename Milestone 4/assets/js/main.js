@@ -222,9 +222,13 @@ createApp({
             }
         },
         getResponse(activeContact) {
+            const randomMsgList = ['Ok', 'Non ti preoccupare', 'Certo!', 'Nessun Problema!']
+            let randomMsgIndex = Math.floor(Math.random() * randomMsgList.length)
+            let randomMsg = randomMsgList[randomMsgIndex]
+            //console.log(randomMsg)
             const responseObj = {
                 date:'10/10/2020 16:51:02',
-                message: 'Ok',
+                message: randomMsg,
                 status: 'received'
             }
             this.contacts[activeContact].messages.push(responseObj)
