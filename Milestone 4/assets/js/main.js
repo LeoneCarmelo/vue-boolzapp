@@ -212,9 +212,11 @@ createApp({
                     message: this.newText,
                     status: 'sent'
                 }
-                this.contacts[activeContact].messages.push(newMessageObj)
-                this.newText = ''
-                this.sendResponse(activeContact)
+                if (newMessageObj.message != '') {
+                    this.contacts[activeContact].messages.push(newMessageObj)
+                    this.newText = ''
+                    this.sendResponse(activeContact)
+                }
             } else {
                 this.newText = 'Seleziona prima un contatto dalla lista'
             }
