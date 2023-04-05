@@ -273,8 +273,9 @@ createApp({
         },
         /* Remove the message */
         removeMessage(activeMessage , allMessages) {
-            //console.log(activeMessage, allMessages)
+            console.log(activeMessage, allMessages)
             allMessages.splice(activeMessage, 1)
+            this.showPopup()
         }
     }
 }).mount('#app')
