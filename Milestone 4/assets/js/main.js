@@ -216,12 +216,12 @@ createApp({
             }
         },
         /* Get all the messages */
-        getAllMessages(messages) {
+/*         getAllMessages(messages) {
             return messages.message
-        },
+        }, */
         /* Get only the date */
-        getDataMessages(messages) {
-            return messages.date.split(' ')[1]
+        getDataMessage(message) {
+            return message.date.split(' ')[1]
         },
         /* Send the new message to the active contact */
         sendNewMessage(activeContact) {
