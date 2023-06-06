@@ -2,8 +2,9 @@
 :root {
     --header: #eaeaea;
     --text: #878788;
-    --message-sent:#d5f9ba;
+    --message-sent: #d5f9ba;
 }
+
 /* #endregion color */
 body {
     height: 100vh;
@@ -12,47 +13,49 @@ body {
 }
 
 .left {
-    width:35%;
+    width: 35%;
     background-color: var(--header);
-    border-bottom: 1px solid  #b0b0b1;
-    border-right: 1px solid  #b0b0b1;
+    border-bottom: 1px solid #b0b0b1;
+    border-right: 1px solid #b0b0b1;
 }
 
 .right {
-    width:65%;
+    width: 65%;
     background-color: var(--header);
-    border-bottom: 1px solid  #b0b0b1;
+    border-bottom: 1px solid #b0b0b1;
 }
 
 /* #region left */
 img {
-    border-radius: 50% ;
+    border-radius: 50%;
 }
 
 .logo_user {
-    width:40px;
+    width: 40px;
 }
 
-.logo_user + span {
+.logo_user+span {
     font-size: 12px;
 }
- .status {
-    display:block;
+
+.status {
+    display: block;
     font-size: 9px;
     color: var(--text);
- }
+}
 
 i {
     color: #b0b0b1;
 }
 
-i:hover, .notify_message > span:last-child {
+i:hover,
+.notify_message>span:last-child {
     cursor: pointer;
 }
 
 main.container {
     background-image: url(../img/mine.jpg);
-    height:400px;
+    height: 400px;
     overflow-y: scroll;
 }
 
@@ -66,19 +69,19 @@ main.container {
     background-color: white;
     border-radius: 50%;
     padding: 5px;
-} 
-
-.icon_bell > i {
-    color:#8edafc;
 }
 
-.notify_message > span:first-child {
+.icon_bell>i {
+    color: #8edafc;
+}
+
+.notify_message>span:first-child {
     font-size: 10px;
     font-weight: bold;
 }
 
-.notify_message > span:last-child,
-.info > span:last-child {
+.notify_message>span:last-child,
+.info>span:last-child {
     font-size: 8px;
     color: var(--text);
     font-weight: 700;
@@ -86,7 +89,7 @@ main.container {
 
 .contacts {
     background-color: #fafafa;
-    height:350px;
+    height: 350px;
     overflow-y: scroll;
     list-style: none;
     padding-left: 0;
@@ -97,11 +100,12 @@ main.container {
     margin-top: 2px;
     cursor: pointer;
 }
+
 .contact:hover {
     background-color: #e9ebeb;
 }
 
-.info > span:first-child {
+.info>span:first-child {
     font-size: 12px;
     font-weight: 600;
 }
@@ -118,7 +122,7 @@ main.container {
     color: var(--text);
 }
 
-.col > div {
+.col>div {
     position: relative;
 }
 
@@ -135,24 +139,39 @@ main.container {
     font-size: 12px;
     font-weight: 600;
     margin-left: auto;
-    width:35%;
+    width: 35%;
 }
 
 main .fa-angle-down {
-    position:absolute;
+    position: absolute;
     right: 10px;
     top: 5px;
     display: none;
 }
 
-.col > div:hover .fa-angle-down {
-    display:block;
+.overlay {
+    background-image: url('https://www.svgrepo.com/show/110197/whatsapp.svg'), url('https://cdn.wallpapersafari.com/91/2/DExBhK.jpg');
+    background-position: center, center;
+    background-size: 10%, cover;
+    background-repeat: no-repeat;
+}
+
+.welcome_text > h3 {
+    top:30%;
+}
+
+.welcome_text > .small_paragraphs {
+    bottom:18%;
+}
+
+.col>div:hover .fa-angle-down {
+    display: block;
 }
 
 .popup {
     position: absolute;
-    top:45px;
-    right:10px;
+    top: 45px;
+    right: 10px;
     background-color: white;
     padding: 10px;
     border-radius: 5px;
@@ -173,7 +192,8 @@ button:hover {
 .message_data {
     font-size: 8px;
 }
-footer > input {
+
+footer>input {
     width: 85%;
     border: 0;
     border-radius: 6px;
@@ -183,6 +203,7 @@ footer > input {
 footer i {
     color: #6b7274;
 }
+
 /* #endregion right */
 
 /* Responsive */
@@ -192,13 +213,15 @@ footer i {
     .menu_left i:not(.menu_left i:last-child) {
         display: none;
     }
+
     div.container {
         max-width: 100%;
     }
 }
 
 @media screen and (max-width:554px) {
-    .menu_right i:not(i:last-child), 
+
+    .menu_right i:not(i:last-child),
     .notify_message {
         display: none;
     }
@@ -209,8 +232,10 @@ footer i {
     .info_user {
         flex-direction: column;
     }
-    .message_sent, .message_received {
-        margin:0;
-        width:fit-content
+
+    .message_sent,
+    .message_received {
+        margin: 0;
+        width: fit-content
     }
 }

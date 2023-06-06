@@ -22,7 +22,7 @@
                         align-items-center">
                         <div class="user m-1 d-flex">
                             <div class="logo_user">
-                                <img src="./assets/img/avatar_io.jpg" alt=""
+                                <img src="./assets/img/avatar_io.jpg" alt
                                     class="img-fluid">
                             </div>
                             <div class="user_name">
@@ -56,27 +56,35 @@
                                 <i class="px-2 fa-solid fa-magnifying-glass"></i>
                             </span>
                             <input type="text" class="form-control border-0
-                                bg-white" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
-                                aria-describedby="addon-wrapping" v-model="textToSearch">
+                                bg-white"
+                                placeholder="Cerca o inizia una nuova chat"
+                                aria-label="Username"
+                                aria-describedby="addon-wrapping"
+                                v-model="textToSearch">
                         </div>
                     </div>
                     <!-- Contacts -->
                     <ul class="contacts mb-0">
                         <!-- Controllo contacts e filteredContact -->
-                        <li v-for="(contact, index) in filteredContacts()" class="contact
+                        <li v-for="(contact, index) in filteredContacts()"
+                            class="contact
                             d-flex justify-content-between py-1 mb-1"
-                            @click="setActiveContact(index)">
+                            @click="setActiveContact(index); removeWelcomePage()">
                             <div class="ps-2 info_user d-flex">
                                 <div class="logo_user">
-                                    <img :src="contact.avatar" alt=""
+                                    <img :src="contact.avatar" alt
                                         class="img-fluid">
                                 </div>
                                 <div class="info">
                                     <span class="ps-2 align-self-center">{{contact.name}}</span>
-                                    <span class="ps-2 d-none d-sm-block last_msg">{{ getLastMessage(contact.messages) }}</span>
+                                    <span
+                                        class="ps-2 d-none d-sm-block last_msg">{{
+                                        getLastMessage(contact.messages) }}</span>
                                 </div>
                             </div>
-                            <div class="data pe-2">{{ getLastTimeAccess(contact.messages).slice(5, -3) }}</div>
+                            <div class="data pe-2">{{
+                                getLastTimeAccess(contact.messages).slice(5, -3)
+                                }}</div>
                         </li>
                     </ul>
                 </div>
@@ -87,12 +95,16 @@
                         align-items-center justify-content-between">
                         <div class="user m-1 d-flex" v-if="activeContact != -1">
                             <div class="logo_user">
-                                <img :src="contacts[activeContact].avatar" alt=""
+                                <img :src="contacts[activeContact].avatar" alt
                                     class="img-fluid">
                             </div>
                             <div class="info">
                                 <span class="ps-2 align-self-center">{{contacts[activeContact].name}}</span>
-                                <span class="ps-2  d-block">{{ getLastDataAccess(contacts[activeContact].messages) }} <span>{{ getLastTimeAccess(contacts[activeContact].messages) }}</span>
+                                <span class="ps-2  d-block">{{
+                                    getLastDataAccess(contacts[activeContact].messages)
+                                    }} <span>{{
+                                        getLastTimeAccess(contacts[activeContact].messages)
+                                        }}</span>
                                 </span>
                             </div>
                         </div>
@@ -103,17 +115,37 @@
                         </div>
                     </header>
                     <!-- Main -->
-                    <main class="container">
+                    <main class="container position-relative px-0">
+                        <div :class="welcomePage ? '' : 'd-none'"
+                            class="overlay position-absolute w-100 h-100 top-0 left-0 overflow-hidden d-flex justify-content-center">
+                            <div class="welcome_text h-100 w-50 d-flex flex-column justify-content-center text-white align-items-center position-relative">
+                                <h3 class="position-absolute fw-bold text-center">Whatsapp Web</h3>
+                                <div class="small_paragraphs position-absolute d-flex flex-column text-center d-none d-md-flex">
+                                    <small class="fw-semibold d-none d-none d-lg-block">Invia e ricevi messaggi senza mantenere il telefono connesso a internet.</small>
+                                    <small class="fw-semibold">Usa WhatsApp su un massimo di 4 dispositivi collegati e 1 telefono contemporaneamente.</small>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row px-3">
                             <div class="col" v-if="activeContact != -1">
-                                <div v-for="(message, index) in contacts[activeContact].messages"
+                                <div
+                                    v-for="(message, index) in contacts[activeContact].messages"
                                     class="p-2
-                                    rounded-3 mt-3" :class="message.status == 'received' ? 'message_received' : 'message_sent'"> {{ message.message }}
-                                    <div class="message_data text-end">{{ getDataMessage(message) }}</div>
-                                    <i class="fa fa-angle-down" aria-hidden="true" @click="setActiveMessage(index)"></i>
-                                    <div v-if="activeMessage === index" class="popup" :class="popup === false ? 'd-none' : 'd-block'">
+                                    rounded-3 mt-3"
+                                    :class="message.status == 'received' ? 'message_received' : 'message_sent'">
+                                    {{ message.message }}
+                                    <div class="message_data text-end">{{
+                                        getDataMessage(message) }}</div>
+                                    <i class="fa fa-angle-down"
+                                        aria-hidden="true"
+                                        @click="setActiveMessage(index)"></i>
+                                    <div v-if="activeMessage === index"
+                                        class="popup"
+                                        :class="popup === false ? 'd-none' : 'd-block'">
                                         <button class="d-block">Message info</button>
-                                        <button class="d-block" @click="removeMessage(activeMessage, contacts[activeContact].messages)">Delete message</button>
+                                        <button class="d-block"
+                                            @click="removeMessage(activeMessage, contacts[activeContact].messages)">Delete
+                                            message</button>
                                     </div>
                                 </div>
                             </div>
@@ -123,14 +155,17 @@
                     <footer class="d-flex justify-content-center
                         align-items-center py-1 px-2">
                         <i class="pe-3 fa-regular fa-face-smile"></i>
-                        <input type="text" v-model="newText" placeholder="Scrivi un messaggio" @keyup.enter="sendNewMessage(activeContact)">
-                        <i class="ps-3 fa-solid fa-microphone" :class="newText.length > 0 ?'d-none' : 'd-block'"></i>
-                        <i class="ps-3 fa-sharp fa-solid fa-paper-plane" :class="newText.length > 0 ? 'd-block' : 'd-none'"></i>
+                        <input type="text" v-model="newText"
+                            placeholder="Scrivi un messaggio"
+                            @keyup.enter="sendNewMessage(activeContact)">
+                        <i class="ps-3 fa-solid fa-microphone"
+                            :class="newText.length > 0 ?'d-none' : 'd-block'"></i>
+                        <i class="ps-3 fa-sharp fa-solid fa-paper-plane"
+                            :class="newText.length > 0 ? 'd-block' : 'd-none'"></i>
                     </footer>
                 </div>
             </div>
         </div>
-
 
         <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
         <script src="./assets/js/main.js"></script>

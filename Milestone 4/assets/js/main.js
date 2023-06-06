@@ -172,9 +172,14 @@ createApp({
             textToSearch: '',
             popup: false,
             activeMessage: -1,
+            welcomePage: true,
         }
     },
     methods: {
+        /* Remove Welcome Page */
+        removeWelcomePage() {
+            this.welcomePage = false
+        }, 
         /* Selection of the active contact */
         setActiveContact(index) {
             this.activeContact = index
