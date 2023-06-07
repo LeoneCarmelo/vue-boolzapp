@@ -173,13 +173,23 @@ createApp({
             popup: false,
             activeMessage: -1,
             welcomePage: true,
+            drop:false,
+            darkMode:false,
+            hoverDark:false
         }
     },
     methods: {
         /* Remove Welcome Page */
         removeWelcomePage() {
             this.welcomePage = false
-        }, 
+        },
+        /* showDrop for Dark mode */
+        showDrop() {
+            this.drop = !this.drop
+        },
+        activeDarkMode() {
+            this.darkMode = !this.darkMode
+        },
         /* Selection of the active contact */
         setActiveContact(index) {
             this.activeContact = index

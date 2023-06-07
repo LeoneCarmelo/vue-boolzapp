@@ -3,15 +3,27 @@
     --header: #eaeaea;
     --text: #878788;
     --message-sent: #d5f9ba;
+    --bg-dark-mode: #111b21;
+    --hover-dark-mode: #202c33;
+    --green-dark-mode:#00a884;
+    --contatcs-hover:#e9ebeb; 
+    --notifications:#8edafc;
 }
 
 /* #endregion color */
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(#00887b 20%, #dadbd3 20%);
     overflow-y: hidden;
+    position:relative;
 }
 
+.dark_mode {
+    position:absolute;
+    top:0;
+    height: 100vh;
+    width:100%;
+}
 .left {
     width: 35%;
     background-color: var(--header);
@@ -23,9 +35,33 @@ body {
     width: 65%;
     background-color: var(--header);
     border-bottom: 1px solid #b0b0b1;
+
+}
+/* Classes colors*/
+.bg_dark_mode {
+    background-color: var(--bg-dark-mode);
+}
+
+.header_hover_dark_mode {
+    background-color: var(--hover-dark-mode);
+}
+
+.contact_hover {
+    background-color: var(--contatcs-hover);
 }
 
 /* #region left */
+.drop {
+    position:absolute;
+    width:100px;
+    height:40px;
+    bottom:-50px;
+    left: -70px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 2;
+    background-color: white;
+}
+
 img {
     border-radius: 50%;
 }
@@ -57,10 +93,11 @@ main.container {
     background-image: url(../img/mine.jpg);
     height: 400px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .notifications {
-    background-color: #8edafc;
+    background-color: var(--notifications);
 }
 
 .icon_bell {
@@ -88,7 +125,6 @@ main.container {
 }
 
 .contacts {
-    background-color: #fafafa;
     height: 350px;
     overflow-y: scroll;
     list-style: none;
@@ -96,7 +132,6 @@ main.container {
 }
 
 .contact {
-    background-color: white;
     margin-top: 2px;
     cursor: pointer;
 }
