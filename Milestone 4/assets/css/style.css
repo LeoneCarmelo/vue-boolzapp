@@ -90,10 +90,18 @@ i:hover,
 }
 
 main.container {
-    background-image: url(../img/mine.jpg);
     height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.bg_image {
+    background-image: url('../img/mine.jpg');
+}
+
+.bg_image_dark {
+    background-image: url('https://wallpaperaccess.com/full/2224392.png');
+    background-size: cover;
 }
 
 .notifications {

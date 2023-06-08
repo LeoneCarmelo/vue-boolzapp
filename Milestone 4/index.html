@@ -123,7 +123,7 @@
                             </div>
                         </header>
                         <!-- Main -->
-                        <main class="container position-relative px-0">
+                        <main class="container position-relative px-0" :class="darkMode ? 'bg_image_dark' : 'bg_image'">
                             <div :class="welcomePage ? '' : 'd-none'"
                                 class="overlay position-absolute w-100 h-100 top-0 left-0 overflow-hidden d-flex justify-content-center">
                                 <div class="welcome_text h-100 w-50 d-flex flex-column justify-content-center text-white align-items-center position-relative">
