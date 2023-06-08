@@ -1,5 +1,5 @@
 const { createApp } = Vue
-
+var DateTime = luxon.DateTime
 createApp({
     data() {
         return {
@@ -175,7 +175,7 @@ createApp({
             welcomePage: true,
             drop:false,
             darkMode:false,
-            hoverDark:false
+            hoverDark:false,
         }
     },
     methods: {
@@ -238,11 +238,14 @@ createApp({
         getDataMessage(message) {
             return message.date.split(' ')[1]
         },
-        /* Send the new message to the active contact */
+        /* Send the new message to the active contact  '10/10/2020 16:51:01'*/
         sendNewMessage(activeContact) {
             if (activeContact != -1) {
+                const dt = DateTime.now()
+                const dateComaTime = dt.toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
+                const dateTime = dateComaTime.replace(',', '')
                 const newMessageObj = {
-                    date: '10/10/2020 16:51:01',
+                    date: dateTime,
                     message: this.newText,
                     status: 'sent'
                 }
@@ -261,8 +264,11 @@ createApp({
             let randomMsgIndex = Math.floor(Math.random() * randomMsgList.length)
             let randomMsg = randomMsgList[randomMsgIndex]
             //console.log(randomMsg)
+            const dt = DateTime.now()
+            const dateComaTime = dt.toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
+            const dateTime = dateComaTime.replace(',', '')
             const responseObj = {
-                date:'10/10/2020 16:51:02',
+                date: dateTime,
                 message: randomMsg,
                 status: 'received'
             }
