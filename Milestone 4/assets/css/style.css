@@ -24,6 +24,11 @@ body {
     height: 100vh;
     width:100%;
 }
+
+.dark_mode > .container {
+    height:95vh;
+}
+
 .left {
     width: 35%;
     background-color: var(--header);
@@ -35,7 +40,7 @@ body {
     width: 65%;
     background-color: var(--header);
     border-bottom: 1px solid #b0b0b1;
-
+    position:relative;
 }
 /* Classes colors*/
 .bg_dark_mode {
@@ -90,7 +95,7 @@ i:hover,
 }
 
 main.container {
-    height: 400px;
+    height: calc(100% - 92px);
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -133,7 +138,7 @@ main.container {
 }
 
 .contacts {
-    height: 350px;
+    height: calc(100% - 138px);
     overflow-y: scroll;
     list-style: none;
     padding-left: 0;
@@ -165,7 +170,7 @@ main.container {
     color: var(--text);
 }
 
-.col>div {
+.col > div {
     position: relative;
 }
 
@@ -236,6 +241,12 @@ button:hover {
     font-size: 8px;
 }
 
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
 footer>input {
     width: 85%;
     border: 0;
@@ -272,6 +283,12 @@ footer i {
 }
 
 @media screen and (max-width:486px) {
+    .left {
+        width: 27%;
+    }
+    .right {
+        width:73%;
+    }
     .info_user {
         flex-direction: column;
     }
