@@ -173,9 +173,9 @@ createApp({
             popup: false,
             activeMessage: -1,
             welcomePage: true,
-            drop:false,
-            darkMode:false,
-            hoverDark:false,
+            drop: false,
+            darkMode: false,
+            hoverDark: false,
         }
     },
     methods: {
@@ -189,6 +189,7 @@ createApp({
         },
         activeDarkMode() {
             this.darkMode = !this.darkMode
+            this.hoverDark = !this.hoverDark
         },
         /* Selection of the active contact */
         setActiveContact(index) {
@@ -200,7 +201,7 @@ createApp({
         /* Selection the last messages */
         getLastMessage(messages) {
             if (messages.length > 0) {
-                const lastMessageIndex = messages.length -1
+                const lastMessageIndex = messages.length - 1
                 const message = messages[lastMessageIndex].message
                 return message
             } else {
@@ -210,10 +211,10 @@ createApp({
         /* Get the last message with the data last data access */
         getLastDataAccess(messages) {
             if (messages.length > 0) {
-                const lastMessageIndex = messages.length -1
+                const lastMessageIndex = messages.length - 1
                 const entireDateArr = messages[lastMessageIndex].date.split(' ')
                 const date = `Ultimo accesso oggi ${entireDateArr[0]}`
-    
+
                 return date
             } else {
                 return ''
@@ -221,8 +222,8 @@ createApp({
         },
         /* Get last time access in hours */
         getLastTimeAccess(messages) {
-            if(messages.length > 0) {
-                const lastMessageIndex = messages.length -1
+            if (messages.length > 0) {
+                const lastMessageIndex = messages.length - 1
                 const entireDateArr = messages[lastMessageIndex].date.split(' ')
                 const time = `alle ${entireDateArr[1]}`
                 return time
@@ -231,9 +232,9 @@ createApp({
             }
         },
         /* Get all the messages */
-/*         getAllMessages(messages) {
-            return messages.message
-        }, */
+        /*         getAllMessages(messages) {
+                    return messages.message
+                }, */
         /* Get only the date */
         getDataMessage(message) {
             return message.date.split(' ')[1]
@@ -276,10 +277,13 @@ createApp({
         },
         /* Set time to get a answer */
         sendResponse(activeContact) {
-            this.response = setTimeout(this.getResponse(activeContact), 1000)
+            //this.response = setTimeout(this.getResponse(activeContact), 2000)
+            this.response = setTimeout(() => {
+                this.getResponse(activeContact)
+            }, 2000)
         },
         /* Filtered contact depends what we write in the search bar */
-        filteredContacts(){
+        filteredContacts() {
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.textToSearch.toLowerCase()))
         },
         /* Toggle to show and hid the popup message */
@@ -293,11 +297,26 @@ createApp({
             //console.log(this.activeMessage)
         },
         /* Remove the message */
-        removeMessage(activeMessage , allMessages) {
-            console.log(activeMessage, allMessages)
+        removeMessage(activeMessage, allMessages) {
+            //console.log(activeMessage, allMessages)
             allMessages.splice(activeMessage, 1)
             this.showPopup()
         }
+    },
+    mounted() {
+        contacts = document.querySelectorAll('.contact')
+        contacts.forEach(contact => {
+            contact.addEventListener('mouseover', () => {
+                if (contact.classList.contains('bg_dark_mode')) {
+                    contact.children[0].classList.add('text-dark')
+                }
+            })
+            contact.addEventListener('mouseleave', () => {
+                if (contact.classList.contains('bg_dark_mode')) {
+                    contact.children[0].classList.remove('text-dark')
+                }
+            })
+        });
     }
 }).mount('#app')
 
