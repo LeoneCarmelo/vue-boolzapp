@@ -3,7 +3,7 @@
     --header: #eaeaea;
     --text: #878788;
     --message-sent: #d5f9ba;
-    --bg-dark-mode: #111b21;
+    --bg-dark-mode: #111b21e6;
     --hover-dark-mode: #202c33;
     --green-dark-mode:#00a884;
     --contatcs-hover:#e9ebeb; 
@@ -45,6 +45,10 @@ body {
 /* Classes colors*/
 .bg_dark_mode {
     background-color: var(--bg-dark-mode);
+}
+
+.bg_header {
+    background-color: var(--header);
 }
 
 .header_hover_dark_mode {
@@ -132,9 +136,9 @@ main.container {
 
 .notify_message>span:last-child,
 .info>span:last-child {
-    font-size: 8px;
+    font-size: 10px;
     color: var(--text);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .contacts {
@@ -150,7 +154,7 @@ main.container {
 }
 
 .contact:hover {
-    background-color: #e9ebeb;
+    background-color: var(--header);
 }
 
 .info>span:first-child {
