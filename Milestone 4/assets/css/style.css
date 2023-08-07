@@ -51,6 +51,12 @@ body {
     background-color: var(--header);
 }
 
+.bg_input_footer {
+    background-color: #33444d;
+}
+.form-control:focus {
+background: transparent;
+}
 .header_hover_dark_mode {
     background-color: var(--hover-dark-mode);
 }

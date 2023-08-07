@@ -190,6 +190,24 @@ createApp({
         activeDarkMode() {
             this.darkMode = !this.darkMode
             this.hoverDark = !this.hoverDark
+            let ulEl = document.querySelector('.contacts')
+            console.log(ulEl)
+            if(this.darkMode){
+                contacts = document.querySelectorAll('.contact')
+                contacts.forEach(contact => {
+                    //console.log(contact.children[0].children[1].children[0]);
+                    contact.addEventListener('mouseover', () => {
+                        if (contact.classList.contains('bg_dark_mode')) {
+                            contact.children[0].children[1].children[0].classList.add('text-dark')
+                        }
+                    })
+                    contact.addEventListener('mouseleave', () => {
+                        if (contact.classList.contains('bg_dark_mode')) {
+                            contact.children[0].children[1].children[0].classList.remove('text-dark')
+                        }
+                    })
+                });
+            }
         },
         /* Selection of the active contact */
         setActiveContact(index) {
@@ -261,7 +279,8 @@ createApp({
         },
         /* Get random answer */
         getResponse(activeContact) {
-            const randomMsgList = ['Ok', 'Non ti preoccupare', 'Certo!', 'Nessun Problema!']
+            //const randomMsgList = ['Ok', 'Non ti preoccupare', 'Certo!', 'Nessun Problema!']
+            const randomMsgList = ['Ok']
             let randomMsgIndex = Math.floor(Math.random() * randomMsgList.length)
             let randomMsg = randomMsgList[randomMsgIndex]
             //console.log(randomMsg)
@@ -303,7 +322,7 @@ createApp({
             this.showPopup()
         }
     },
-    mounted() {
+/*     mounted() {
         contacts = document.querySelectorAll('.contact')
         contacts.forEach(contact => {
             contact.addEventListener('mouseover', () => {
@@ -317,7 +336,7 @@ createApp({
                 }
             })
         });
-    }
+    } */
 }).mount('#app')
 
 

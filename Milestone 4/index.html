@@ -72,12 +72,12 @@
                             :class="darkMode ? 'bg_dark_mode' : ''">
                             <div class="input-group flex-nowrap">
                                 <span
-                                    class="input-group-text border-0 bg-white  d-none d-sm-block"
+                                    class="input-group-text border-0 d-none d-sm-block"
                                     id="addon-wrapping">
                                     <i class="px-2 fa-solid fa-magnifying-glass"></i>
                                 </span>
                                 <input type="text" class="form-control border-0
-                                    bg-white"
+                                    "
                                     placeholder="Cerca o inizia una nuova chat"
                                     aria-label="Username"
                                     aria-describedby="addon-wrapping"
@@ -198,7 +198,8 @@
                             <i class="pe-3 fa-regular fa-face-smile"></i>
                             <input type="text" v-model="newText"
                                 placeholder="Scrivi un messaggio"
-                                @keyup.enter="sendNewMessage(activeContact)">
+                                @keyup.enter="sendNewMessage(activeContact)"
+                                :class="darkMode ? 'bg_input_footer' : ''">
                             <i class="ps-3 fa-solid fa-microphone"
                                 :class="newText.length > 0 ?'d-none' : 'd-block'"></i>
                             <i class="ps-3 fa-sharp fa-solid fa-paper-plane"
